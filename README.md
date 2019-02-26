@@ -35,8 +35,15 @@ iex(17)> PhoneDictonary.number_to_words("6686787825")
  iex(23)> PhoneDictonary.number_to_words("6686787821")
 "Number is not valid it's contained 0 or 1"
 ```
+## Problem thought process:
 
- 
+In the given problem we have **dictonary.text** file which contains all words words in csv format. Now
+in given problem we have to find the words at least 3 characters. So first convert **dictonary.txt** file into elixir 
+map so we will be having map of dictonary have same key value that will help us to fetch or match the inputs from the given words through phone number in neglegible time. Once we done with this then we have to think recursive and tail recursive approach as elixir will support that so we have to breakdown out problem into small steps and then conclude the complete solution by combining them in bottom to top approach. 
+once we get the input number from the user we have to iterate through number recursively as in elixir there is no looping like java and other imerative languages so iterate through the number length and for each number we will find the mapping combanations from the given phone number mapping. For finding the all possible characters combinations and converting them into words of list of length 10, we will iterate over mapping input number list of chars and make a possible combinations of words.
+Once we will have all the world list after that we will create the sets of 2-2 elements as the results will be combination of **2** words so the minimum length of string should be **3** and maximuxm  should be **7** so by this approach we will be having all possible combinations for each words into word list generated from the phone number.
+Once we have the desired list of words then we can map them easily and combine all the results of 2 words set as a output which has been mapped from the dictonary map.
+
 
 ## Installation
 
