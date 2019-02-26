@@ -30,6 +30,11 @@ iex(17)> PhoneDictonary.number_to_words("6686787825")
  [["ONTO", "STRUCK"]]]
  
  ```
+ ## Phone number must not contain the "0" or "1"
+ ```
+ iex(23)> PhoneDictonary.number_to_words("6686787821")
+"Number is not valid it's contained 0 or 1"
+```
 
  
 
