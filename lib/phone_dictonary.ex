@@ -8,7 +8,7 @@ defmodule PhoneDictonary do
   """
 
   @doc """
-  Hello world.
+  number_to_words.
 
   ##
       n must be String of number
@@ -16,7 +16,9 @@ defmodule PhoneDictonary do
 
 
   """
+  @doc """
   # this method will take number of ten digit as a input
+  """
   def number_to_words(n) do
     len = String.length(n)
     if(n =~ "0" or n=~ "1") do "Number is not valid it's contained 0 or 1"
@@ -33,14 +35,16 @@ defmodule PhoneDictonary do
      #   diff = next - prev
     end
   end
-
+@doc """
 # method for creating sets of substring of words
+"""
   def get_sub_str(str,dict_map) do
     len = 3
     getWords(len, str, [],dict_map)
   end
-
+@doc """
 # method for getting words from dictonary recursively
+"""
   def getWords(len, str, word_groups,dict_map) when len<=7 do
     word1 = String.slice(str, 0..(len-1))
     word2 = String.slice(str,len..-1)
@@ -54,8 +58,9 @@ defmodule PhoneDictonary do
   def getWords(_, str, word_groups, _) do
    word_groups
   end
-
+@doc """
 # this method will combine given number to correspond mapping recursively
+"""
   def combine(n,[h|t],acc) when n>=0 do
       combine(n-1, t, add_prefix(Map.get(@directory,h) , "",acc))
     end
@@ -71,8 +76,9 @@ defmodule PhoneDictonary do
  def add_prefix([], prefix,acc) do
    acc
  end
-
+@doc """
  #this method will conver list of string to map recursively
+ """
   def to_map([h|t],acc)do
      to_map(t,Map.put(acc, h,h))
   end
