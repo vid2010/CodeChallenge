@@ -19,6 +19,7 @@ defmodule PhoneDictonary do
   @doc """
   # this method will take number of ten digit as a input
   """
+  
   def number_to_words(n) do
     len = String.length(n)
     if(n =~ "0" or n=~ "1") do "Number is not valid it's contained 0 or 1"
